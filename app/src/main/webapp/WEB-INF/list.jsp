@@ -85,7 +85,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>Jogos</h1>
+    <h1>Lista de Jogos</h1>
     <hr>
     <a href="/jogo/insert" class="btn btn-primary">Novo Jogo</a>
     <hr>
