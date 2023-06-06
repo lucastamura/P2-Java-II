@@ -20,7 +20,7 @@
                     <th>Ano de Lançamento</th>
                     <th>&nbsp;</th>
                 </tr>
-                <c:forEach var="item" items="${jogos}">
+                <c:forEach var="item" items="${jogo}">
                     <tr>
                         <td>${item.id}</td>
                         <td>${item.titulo}</td>

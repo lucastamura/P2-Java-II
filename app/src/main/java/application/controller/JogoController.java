@@ -49,13 +49,13 @@ public class JogoController {
         }
 
         model.addAttribute("jogo", jogo.get());
-        return "update.jsp";
+        return "update";
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public String update(
-        @RequestParam("id") int id,
         @RequestParam("titulo") String titulo,
+        @RequestParam("id") int id,
         @RequestParam("anoDeLancamento") int anoDeLancamento
     ) {
         Optional<Jogo> jogo = jogoRepo.findById(id);
@@ -65,11 +65,28 @@ public class JogoController {
 
         jogo.get().setTitulo(titulo);
         jogo.get().setAnoDeLancamento(anoDeLancamento);
-        
+
         jogoRepo.save(jogo.get());
         return "redirect:/jogo/list";
     }
 
+    // @RequestMapping("/delete")
+    // public String delete(Model model, @RequestParam("id") int id) {
+    //     Optional<Jogo> jogo = jogoRepo.findById(id);
+
+    //     if(!jogo.isPresent()) {
+    //         return "redirect:/jogo/list";
+    //     }
+
+    //     model.addAttribute("jogo", jogo.get());
+    //     return "delete.jsp";
+    // }
+
+    // @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    // public String delete(@RequestParam("id") int id) {
+    //     jogoRepo.deleteById(id);
+    //     return "redirect:/jogo/list";
+    // }
     @RequestMapping("/delete")
     public String delete(Model model, @RequestParam("id") int id) {
         Optional<Jogo> jogo = jogoRepo.findById(id);
@@ -79,7 +96,7 @@ public class JogoController {
         }
 
         model.addAttribute("jogo", jogo.get());
-        return "delete.jsp";
+        return "delete";
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
