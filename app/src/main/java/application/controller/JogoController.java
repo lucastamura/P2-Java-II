@@ -70,23 +70,7 @@ public class JogoController {
         return "redirect:/jogo/list";
     }
 
-    // @RequestMapping("/delete")
-    // public String delete(Model model, @RequestParam("id") int id) {
-    //     Optional<Jogo> jogo = jogoRepo.findById(id);
 
-    //     if(!jogo.isPresent()) {
-    //         return "redirect:/jogo/list";
-    //     }
-
-    //     model.addAttribute("jogo", jogo.get());
-    //     return "delete.jsp";
-    // }
-
-    // @RequestMapping(value = "/delete", method = RequestMethod.POST)
-    // public String delete(@RequestParam("id") int id) {
-    //     jogoRepo.deleteById(id);
-    //     return "redirect:/jogo/list";
-    // }
     @RequestMapping("/delete")
     public String delete(Model model, @RequestParam("id") int id) {
         Optional<Jogo> jogo = jogoRepo.findById(id);
