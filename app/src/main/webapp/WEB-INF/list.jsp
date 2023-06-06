@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="./favicon.png">
-    <title>Jogos</title>
+    <title>Lista de Jogos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
