@@ -2,27 +2,99 @@
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Atualizar Jogo</title>
-        <link href="/css/bootstrap.min.css" rel="stylesheet">
-    </head>
-    <body>
-        <div class="container">
-            <h1>Atualizar Jogo</h1>
-            <a href="/jogo/list" class="btn btn-primary">Voltar</a>
-            <form action="/jogo/update" method="post">
-                <input type="hidden" name="id" value="${jogo.id}" />
-                <div class="form-group">
-                    <label for="titulo">TíTulo</label>
-                    <input type="text" name="titulo" class="form-control" value="${jogo.titulo}" />
-                </div>
-                <div class="form-group">
-                    <label for="anoDeLancamento">Ano de Lançamento</label>
-                    <input type="number" name="anoDeLancamento" class="form-control" value="${jogo.anoDeLancamento}" />
-                </div>
-                <button type="submit" class="btn btn-success">Salvar</button>
-            </form>
+<head>
+    <meta charset="UTF-8">
+    <title>Atualizar Jogo</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        button[type="submit"] {
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #5cb85c;
+            border-radius: 3px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #449d44;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 8px 12px;
+            margin-right: 5px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #337ab7;
+            border-radius: 3px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn.btn-primary {
+            background-color: #337ab7;
+        }
+        
+        .btn.btn-primary:hover {
+            background-color: #286090;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Atualizar Jogo</h1>
+    <a href="/jogo/list" class="btn btn-primary">Voltar</a>
+    <form action="/jogo/update" method="post">
+        <input type="hidden" name="id" value="${jogo.id}" />
+        <div class="form-group">
+            <label for="titulo">TíTulo</label>
+            <input type="text" name="titulo" class="form-control" value="${jogo.titulo}" />
         </div>
-    </body>
+        <div class="form-group">
+            <label for="anoDeLancamento">Ano de Lançamento</label>
+            <input type="number" name="anoDeLancamento" class="form-control" value="${jogo.anoDeLancamento}" />
+        </div>
+        <button type="submit" class="btn btn-success">Salvar</button>
+    </form>
+</div>
+</body>
 </html>
